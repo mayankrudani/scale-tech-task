@@ -49,6 +49,14 @@ export const themeCofig = createTheme({
                     //     borderColor: 'rgba(0,0,0,.38);',
                     // },
                     '& .MuiInputBase-root': {
+                        backgroundColor: "#fff",
+                        boxShadow: "0px 1px 5px #cbc2c2",
+                        "&:hover": {
+                            backgroundColor: "#fff"
+                        },
+                        "&.Mui-focused": {
+                            backgroundColor: "#fff"
+                        },
                         "& input": {
                             padding: "10px 20px",
                         },

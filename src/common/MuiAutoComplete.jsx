@@ -9,6 +9,7 @@ import React from 'react'
 const PrimaryDropDown = ({
     id = "",
     title = "",
+    placeholder="",
     options = [],
     inputRef = {},
     error = "",
@@ -28,6 +29,7 @@ const PrimaryDropDown = ({
                         error={error}
                         helperText={helperText}
                         {...inputRef}
+                        placeholder={placeholder}
                     />
                 }
                 {...rest}

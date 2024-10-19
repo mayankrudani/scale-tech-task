@@ -38,8 +38,10 @@ const HomePage = () => {
 
   // ======== HANDLE SUBMIT FUNCTION ========
   const onSubmit = (values) => {
+    // ========== Store Data in localStorage ========== 
     const getStoredData = JSON.parse(localStorage.getItem("data"))
     const storedData = { ...(getStoredData ? getStoredData : {}), [showList]: values }
+
     localStorage.setItem("data", JSON.stringify(storedData))
     reset();
   }
@@ -78,6 +80,7 @@ const HomePage = () => {
             sx={{
               boxShadow: "1px 0px 5px black",
               minHeight: "100vh",
+              height: "100%",
               padding: "50px 10px 0px"
             }}>
             <Box>
@@ -132,14 +135,13 @@ const HomePage = () => {
 
         </Grid>
 
-        <Grid item xs={12} sm={8} ml={3}>
-          <Container sx={{ pt: 5 }}>
+        <Grid item xs={12} sm={8} ml={3} >
+          <Container sx={{ py: 5 }}>
 
 
             {/* ====== ACTIVE TAB TITLE  ======  */}
             <Typography fontSize={"32px"} fontWeight={500} sx={{ width: "100%" }}>
               {jsonData?.form?.groups[showList].title}
-              {console.log("jsonData?.form?.groups[showList].fields", jsonData?.form?.groups[showList].fields)}
             </Typography>
 
 
@@ -225,6 +227,7 @@ const HomePage = () => {
                               title={value.label}
                               inputRef={register(value.name, { ...(value.required ? { required: "Please Select atleast one field" } : {}) })}
                               id={value.name}
+                              placeholder={value?.placeholder || value?.label}
                               error={!!errors[value.name]}
                               helperText={errors[value.name] ? errors[value.name].message : ""}
                               options={value.options}
@@ -265,7 +268,6 @@ const HomePage = () => {
                               max={value.max}
                               step={value.step}
                               onChange={(element) => {
-                                console.log("change is ", element.target.value)
                                 field.onChange(element.target.value)
                               }}
                               error={!!errors[value.name]}
