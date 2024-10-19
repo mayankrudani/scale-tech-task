@@ -69,8 +69,8 @@ const HomePage = () => {
       <Box display={{ xs: "block", sm: "none" }} ml={3} mt={2} onClick={() => setOpen(true)}>
         <ReorderIcon />
       </Box>
-      <Grid container gap={0} spacing={0}>
-        <Grid p={0} m={0} item xs={0} sm={3}>
+      <Grid container gap={0} spacing={0} >
+        <Grid item xs={0} sm={3}>
 
           {/* ========= DESKTOP VIEW ========= */}
           <Box
@@ -78,11 +78,11 @@ const HomePage = () => {
             sx={{
               boxShadow: "1px 0px 5px black",
               minHeight: "100vh",
-              padding: "10px"
+              padding: "50px 10px 0px"
             }}>
             <Box>
 
-              <Typography variant='subtitle1'>
+              <Typography variant='h6'>
                 {jsonData.form.title}
               </Typography>
               <List component="nav" >
@@ -134,6 +134,7 @@ const HomePage = () => {
 
         <Grid item xs={12} sm={8} ml={3}>
           <Container sx={{ pt: 5 }}>
+
 
             {/* ====== ACTIVE TAB TITLE  ======  */}
             <Typography fontSize={"32px"} fontWeight={500} sx={{ width: "100%" }}>
