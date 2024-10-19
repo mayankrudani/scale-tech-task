@@ -21,6 +21,7 @@ This project is a web application designed to collect and manage user details, i
 - **Vite:** A fast development build tool that improves the development experience with features like Hot Module Replacement (HMR).
 - **Material-UI (MUI):** A popular React UI framework that provides pre-built components following Material Design guidelines.
 - **Material-UI Icons:** An icon library for React that complements the MUI components, enhancing the visual appeal of the application.
+- **React Hook Form:** For managing form validation and state in a more efficient way.
 - **CSS:** For additional styling, ensuring a polished look.
 
 
